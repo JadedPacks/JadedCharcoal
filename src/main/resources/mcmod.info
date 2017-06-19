@@ -1,0 +1,19 @@
+[
+	{
+		"modid": "jccharcoal",
+		"name": "JadedCharcoal",
+		"description": "JadedCat Charcoal",
+		"version": "${version}",
+		"mcversion": "${mcversion}",
+		"url": "https://github.com/JadedPacks/JadedCharcoal",
+		"updateUrl": "",
+		"authorList": [
+			"Jadedcat",
+			"Developaws"
+		],
+		"credits": "JadedPacks",
+		"logoFile": "",
+		"screenshots": [],
+		"dependencies": []
+	}
+]
