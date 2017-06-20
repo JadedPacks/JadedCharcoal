@@ -1,5 +1,6 @@
 package com.jadedpacks.jccharcoal;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Loader;
@@ -7,10 +8,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Natura {
 	public static void init() {
-		Item coal = GameRegistry.findItem("minecraft", "coal");
-		ItemStack charcoal2 = new ItemStack(coal, 2, 1);
-		ItemStack charcoal3 = new ItemStack(coal, 3, 1);
-		ItemStack charcoal4 = new ItemStack(coal, 4, 1);
+		ItemStack charcoal2 = new ItemStack(Items.coal, 2, 1);
+		ItemStack charcoal3 = new ItemStack(Items.coal, 3, 1);
+		ItemStack charcoal4 = new ItemStack(Items.coal, 4, 1);
 		if(Loader.isModLoaded("Natura")) {
 			Item nlog1 = GameRegistry.findItem("Natura", "redwood");
 			GameRegistry.addSmelting(new ItemStack(nlog1, 1, 0), charcoal4, 0.1F);

@@ -1,5 +1,6 @@
 package com.jadedpacks.jccharcoal;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import com.jadedpacks.jadedbase.helpers.Parts;
@@ -11,10 +12,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ThermalExpansion {
 	public static void init() {
-		Item coal = GameRegistry.findItem("minecraft", "coal");
-		ItemStack charcoal2 = new ItemStack(coal, 2, 1);
-		ItemStack charcoal3 = new ItemStack(coal, 3, 1);
-		ItemStack charcoal4 = new ItemStack(coal, 4, 1);
+		ItemStack charcoal2 = new ItemStack(Items.coal, 2, 1);
+		ItemStack charcoal3 = new ItemStack(Items.coal, 3, 1);
+		ItemStack charcoal4 = new ItemStack(Items.coal, 4, 1);
 		RecipeRemover.changeThermalExpansionFurnaceRecipe(Parts.oak, charcoal2, 1600);
 		RecipeRemover.changeThermalExpansionFurnaceRecipe(Parts.birch, charcoal2, 1600);
 		RecipeRemover.changeThermalExpansionFurnaceRecipe(Parts.jungle, charcoal3, 1600);

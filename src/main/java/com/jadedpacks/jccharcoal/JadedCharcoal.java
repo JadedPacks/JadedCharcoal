@@ -1,6 +1,6 @@
 package com.jadedpacks.jccharcoal;
 
-import net.minecraft.item.Item;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,7 +11,6 @@ import com.jadedpacks.jadedbase.helpers.RecipeRemover;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.ItemStackHolderInjector;
 
@@ -30,12 +29,11 @@ public class JadedCharcoal {
 		if(Loader.isModLoaded("ThermalExpansion")) {
 			ThermalExpansion.init();
 		}
-		Item coal = GameRegistry.findItem("minecraft", "coal");
-		ItemStack charcoal = new ItemStack(coal, 1, 1);
-		ItemStack charcoal2 = new ItemStack(coal, 2, 1);
-		ItemStack charcoal3 = new ItemStack(coal, 3, 1);
-		ItemStack charcoal4 = new ItemStack(coal, 4, 1);
-		RecipeRemover.removeFurnaceRecipe(charcoal);
+		ItemStack charcoal2 = new ItemStack(Items.coal, 2, 1);
+		ItemStack charcoal3 = new ItemStack(Items.coal, 3, 1);
+		ItemStack charcoal4 = new ItemStack(Items.coal, 4, 1);
+		RecipeRemover.removeFurnaceRecipe(Parts.coal);
+		RecipeRemover.removeFurnaceRecipe(Parts.charcoal);
 		GameRegistry.addSmelting(Parts.oak, charcoal2, 0.1F);
 		GameRegistry.addSmelting(Parts.birch, charcoal2, 0.1F);
 		GameRegistry.addSmelting(Parts.jungle, charcoal3, 0.1F);
@@ -43,10 +41,5 @@ public class JadedCharcoal {
 		GameRegistry.addSmelting(Parts.acacia, charcoal4, 0.1F);
 		GameRegistry.addSmelting(Parts.darkoak, charcoal4, 0.1F);
 		ItemStackHolderInjector.INSTANCE.inject();
-	}
-
-	@Mod.EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
-		RecipeRemover.removeFurnaceRecipe(Parts.charcoal);
 	}
 }

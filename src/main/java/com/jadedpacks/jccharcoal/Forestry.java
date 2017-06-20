@@ -1,5 +1,6 @@
 package com.jadedpacks.jccharcoal;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import com.jadedpacks.jadedbase.helpers.RecipeRemover;
@@ -9,11 +10,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Forestry {
 	public static void init() {
-		Item coal = GameRegistry.findItem("minecraft", "coal");
-		ItemStack charcoal2 = new ItemStack(coal, 2, 1);
-		ItemStack charcoal3 = new ItemStack(coal, 3, 1);
-		ItemStack charcoal4 = new ItemStack(coal, 4, 1);
-		ItemStack charcoal5 = new ItemStack(coal, 5, 1);
+		ItemStack charcoal2 = new ItemStack(Items.coal, 2, 1);
+		ItemStack charcoal3 = new ItemStack(Items.coal, 3, 1);
+		ItemStack charcoal4 = new ItemStack(Items.coal, 4, 1);
+		ItemStack charcoal5 = new ItemStack(Items.coal, 5, 1);
 		if((Wood.acacia != null)) {
 			// stuff for new api
 			RecipeRemover.removeFurnaceRecipe(Wood.acacia);
